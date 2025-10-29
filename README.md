@@ -1,21 +1,18 @@
-# Tourism-Intelligence-Dashboard
 Tourism Intelligence Dashboard
-A modern, interactive web dashboard for city-level tourism analytics and decision support.
+An interactive, visually-rich analytics dashboard for city-level tourism data—offering real‑time KPIs, domestic/international tourist breakdown, dynamic hotel/occupancy review, and actionable visualizations for smarter planning.
 
-Table of Contents
-Introduction
+📸 Demo
+<img src="image.jpg" width="65%" alt="Tourism Intelligence Dashboard - Screenshot">
+📒 Table of Contents
+About the Project
 
-Features
+Key Features
 
-Technical Overview
+Architecture & Flowcharts
 
-Demo & Screenshots
-
-Installation
+Setup & Installation
 
 Usage
-
-Architecture
 
 Use Cases
 
@@ -23,82 +20,98 @@ Contributing
 
 License
 
-Introduction
-The Tourism Intelligence Dashboard centralizes key metrics from multiple cities to empower planners, hotels, and government officials with actionable tourism insights. It provides an elegant UI for exploring arrivals, revenue, hotel performance, and domestic/international tourist flows, with instant visualizations and advanced analytics.
+Contact
 
-Features
-Live KPIs for arrivals, revenue, hotel occupancy
+📝 About the Project
+Tourism Intelligence Dashboard brings together all vital metrics—arrivals, revenue, hotel data, domestic/international split—across multiple cities, in an easy-to-use web interface. Its goal: empower cities, hotels, and agencies to make data-driven decisions and respond proactively to tourism trends.
 
-Partitioned breakdown: domestic vs. international tourists
+✨ Key Features
+KPI Cards: Total arrivals, revenue, average hotel occupancy
 
-Monthly/yearly/year selection for analysis
+Tourist Breakdown: Domestic and International, shown numerically and as a donut chart
 
-Tabular hotel pricing and capacity data
+Hotel Data Table: Name, Stars, Rooms, Price/Night, Occupancy
 
-Interactive charts: trend lines, bar and donut charts
+Charts:
 
-Responsive, themed UI with accent colors per city
+Trend chart (Arrivals, Revenue, Occupancy, Domestic/International over last 6 months)
 
-Real-time updates as you explore data
+Hotel occupancy comparison (bar chart)
 
-Technical Overview
-Frontend: HTML5, CSS3, Chart.js, Font Awesome, Google Fonts
+Donut chart for tourist split
 
-Backend: (Extensible) Can integrate APIs, static JSON, or database (MongoDB recommended for future)
+Dynamic Selection: Instantly updates all visuals based on city/month/year
 
-Data Model: Supports city, month, year partition, domestic/international split, hotels, occupancy, revenue
+Responsive Design: Modern UI, city-themed colors, animated, and fast
 
-Demo & Screenshots
-![Dashboard UI Screenshot]([System Workflow Flowchart](
-
-Installation
-Clone this repository:
-
+🔗 Architecture & Flowcharts
+1️⃣ System Workflow
 text
+flowchart TD
+    A[User Input (City, Month, Year)] --> B[Data Fetch/Processing]
+    B --> C[KPI Calculation (Totals, Domestic/Intl, Revenue, Occupancy)]
+    C --> D[Visualization (KPIs, Table, Charts, Donut)]
+    D --> E[Reports/Exports, Actions, Decision Support]
+2️⃣ Data Pipeline
+text
+flowchart LR
+    Source1[Tourism Stats] --> ETL
+    Source2[Hotels Data] --> ETL
+    Source3[Arrivals by Type] --> ETL
+    ETL --> KPIs
+    ETL --> Table
+    ETL --> Graphs
+    ETL --> Donut
+    KPIs & Table & Graphs & Donut --> Action[Decision, Reports, Exports]
+⚙️ Setup & Installation
+Clone this repo
+
+bash
 git clone https://github.com/your-username/tourism-intelligence-dashboard.git
-Open index.html directly in your browser, or serve via local HTTP server.
+cd tourism-intelligence-dashboard
+Run locally
 
-To connect to real-time APIs, update the JS backend endpoints accordingly.
+Open index.html in your browser
 
-Usage
-Select a city, month, and year to view current statistics.
+Or run a simple server:
 
-Switch between dashboard tabs to explore hotel data and trend charts.
+bash
+python3 -m http.server
+(Optional: For real data/API integration, see scripts/ and extend JavaScript as required)
 
-Analyze splits between domestic and international arrivals in KPIs and donut chart.
+🚀 Usage
+Select the city, month, and year at the top.
 
-Export screenshots and data for reports or presentations.
+Instantly view KPIs, domestic/international stats, and the hotel occupancy/pricing table.
 
-Architecture
-The dashboard follows a modular architecture:
+Analyze live graphs updating to your selections.
 
-User Input: City, month, year
+Use for:
 
-Data Processing: Reads static/mocked or API-fed data, calculates KPIs
+Trend analysis
 
-Visualization Layer: Updates cards, tables, and interactive charts
+Statistical reporting
 
-Flowcharts: See /docs for workflow and data pipeline diagrams
+Visual presentations
 
-Flowcharts available in /docs:
+Management decisions
 
-System Workflow
+🏆 Use Cases
+💼 City Planners: Seasonal demand, resource allocation, event management
 
-Data Pipeline
+🏨 Hotels: Compare occupancy, optimize pricing
 
-Use Cases
-City tourism planning
+🏢 Government: Policy targeting, visa and campaign monitoring
 
-Hotel benchmarking and pricing strategy
+📊 Business/Analytics: Report generation, export, academic research
 
-Government policy analysis
+🧑‍💼 General: Real-time, mobile-friendly data exploration
 
-Academic research
+🤝 Contributing
+Fork the repo
 
-Real-time event resource management
+Make your feature or fix
 
-Contributing
-Fork this repo and submit pull requests for features, bug fixes, or new data integrations.
+Create a pull request
 
-All contributions, feedback, or dashboard extension ideas are welcome!
-
+Suggestions/feature requests are welcome via Issues!
